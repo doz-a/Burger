@@ -1,9 +1,11 @@
 <p>
     {{burger_name}}
-
+    <br>
     <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
         {{#if devoured}}Devour Burger{{else}}Throw burger up{{/if}}
     </button>
 
     <button class="delete-burger" data-id="{{this.id}}">Digest forever!</button>
+
+    <hr>
 </p>
