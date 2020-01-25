@@ -11,7 +11,7 @@ var router = express.Router();
 //     burger.selectAll(function (data) {
 //         console.log(data);
 //         var hbsObject = {
-//             burger_name: data
+//             burgers: data
 //         };
 //         console.log(hbsObject);
 //         res.render("index", hbsObject);
