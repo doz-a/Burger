@@ -65,6 +65,7 @@ var orm = {
             cb(result);
         });
     },
+
     // Changes devoured boolean
     update: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
