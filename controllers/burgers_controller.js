@@ -6,26 +6,6 @@ var burger = require('../models/burger.js');
 var router = express.Router();
 // Create routes here
 
-// Test 1 
-// Create routes 
-// router.get("/", function (req, res) {
-//     burger.selectAll(function (data) {
-//         console.log(data);
-//         var hbsObject = {
-//             burgers: data
-//         };
-//         console.log(hbsObject);
-//         res.render("index", hbsObject);
-//     });
-// });
-
-// Test 2 
-// router.get('/', function (req, res) {
-//     burger.selectAll(function (error, data) {
-//         res.json(data);
-//     });
-// });
-
 // Home page route
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
@@ -44,20 +24,5 @@ router.post("/api/burgers", function (req, res) {
         res.redirect('/');
     })
 })
-
-// Test 
-// var burger = require('./models/burger');
-// app.get('/', function (req, res) {
-//     burger.selectAll(function (error, data) {
-//         res.json(data);
-//     });
-// });
-
-// app.get('/', function (req, res) {
-//     burger.insertOne(function (error, data) {
-//         res.json(data);
-//     });
-// });
-// End test 
 
 module.exports = router;
