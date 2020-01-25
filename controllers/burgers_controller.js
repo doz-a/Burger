@@ -6,6 +6,7 @@ var burger = require('../models/burger.js');
 var router = express.Router();
 // Create routes here
 
+// Test 1 
 // Create routes 
 // router.get("/", function (req, res) {
 //     burger.selectAll(function (data) {
@@ -18,9 +19,21 @@ var router = express.Router();
 //     });
 // });
 
-router.get('/', function (req, res) {
-    burger.selectAll(function (error, data) {
-        res.json(data);
+// Test 2 
+// router.get('/', function (req, res) {
+//     burger.selectAll(function (error, data) {
+//         res.json(data);
+//     });
+// });
+
+// Home page route
+router.get("/", function (req, res) {
+    burger.selectAll(function (data) {
+        var hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
 });
 
