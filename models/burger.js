@@ -23,4 +23,6 @@ var burger = {
         });
     }
 };
+
+// Export to burger_controller.js 
 module.exports = burger

@@ -1,4 +1,4 @@
-// Smport connection.js 
+// Import connection.js 
 var connection = require('../config/connection.js');
 
 // Helper function for the SQL syntax
@@ -45,6 +45,8 @@ var orm = {
             cb(result);
         });
     },
+
+    // Add new burger 
     insertOne: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -61,7 +63,6 @@ var orm = {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
     },
@@ -95,11 +96,10 @@ var orm = {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
     }
 };
 
-// Export the orm
+// Export the orm to model burger.js
 module.exports = orm;
