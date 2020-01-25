@@ -1,8 +1,23 @@
 {{!-- button with submit user input --}}
 
+<h1> Eat the Burgers!</h1>
+
+<h2> Burgers available to eat!</h2>
+
 <ul>
     {{#each burgers}}
-    <li>{{this.burger_name}}</li>
-    <li>{{this}}</li>
+    {{#unless devoured}}
+    {{> burgers/burgersbuttons devoured=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Burgers available to throw up!</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burgersbuttons devoured=false}}
+    {{/unless}}
     {{/each}}
 </ul>
