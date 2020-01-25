@@ -1,15 +1,24 @@
-// import connection.js 
+// Smport connection.js 
 var connection = require('../config/connection.js');
 
-// selectAll method 
+// SelectAll method 
 
 var orm = {
+
+    // Select all method 
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableInput], cb);
+    },
+    // SnsertOne: function (tableInput, ..., cb) {
+    insertOne: function (tableInput, tableName, burgerName, cb) {
+        var queryString = "INSERT INTO ?? (?) VALUES (?)";
+        connection.query(queryString, [tableInput, tableName, burgerName], cb);
     }
-    // insert One row of data Method 
-    // update One burger method 
+    // },
+    // SpdateOne: function (tableInput, ..., cb) {
+
+    // }
 };
 
 
