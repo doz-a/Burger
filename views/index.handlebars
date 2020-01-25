@@ -2,40 +2,55 @@
 
 <h1> Eat the Burgers!</h1>
 
-<h2> Burgers that are available to eat!</h2>
+<div class="row">
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burgersbuttons devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
+    <div class="col">
 
-<h2>Burgers that are available to throw up!</h2>
+        <h3>Add a Burger Here:</h3>
+        <form class="create-form">
 
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burgersbuttons devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="burger_name">
+            </div>
 
+            <div class="form-group">
+                <label for="devoured">Has the burger already been eaten?</label><br>
+                <input type="radio" name="devoured" value="0" checked> Ready to Devour!<br>
+                <input type="radio" name="devoured" value="1"> Ready to throw up!
+            </div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
+    <div class="col">
+        <img src="/assets/img/catBurger.png" alt="Cat Burger">
+    </div>
+</div>
 
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="burger_name">
+<div class="row">
+
+    <div class="col">
+        <h2> Burgers that are available to eat!</h2>
+
+        <p>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burgersbuttons devoured=true}}
+            {{/unless}}
+            {{/each}}
+        </p>
     </div>
 
-    <div class="form-group">
-        <label for="devoured">Has the burger already been eaten?</label><br>
-        <input type="radio" name="devoured" value="0" checked> Ready to Devour!<br>
-        <input type="radio" name="devoured" value="1"> Ready to throw up!
-    </div>
+    <div class="col">
+        <h2>Burgers In Your Stomach!</h2>
 
-    <button type="submit">Add Burger</button>
-</form>
+        <p>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burgersbuttons devoured=false}}
+            {{/if}}
+            {{/each}}
+        </p>
+    </div>
+</div>
